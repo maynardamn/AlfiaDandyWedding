@@ -60,7 +60,7 @@ input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:14px;bo
 .sub{display:block;font:15px/1.6 'Cormorant Garamond',serif;letter-spacing:.04em;margin:0 0 12px;opacity:.9}.jf{font-family:'Noto Sans Javanese',serif}
 .qs{min-height:100svh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(#002b06f2,#002b06c0 45%,#002b06f5),url(assets/temple.jpg) center/cover}
 .fig{position:relative}.deco{position:absolute;pointer-events:none;z-index:0;max-width:none}
-.wyg,.wyb{top:36%;width:24%;z-index:1}.wyg{left:0;transform:translateX(-50%)}.wyb{right:0;transform:translateX(50%)}
+.wyg,.wyb{top:5%;height:150px;width:auto;z-index:1}.wyg{left:0;transform:translateX(-50%)}.wyb{right:0;transform:translateX(50%)}
 .fr{top:-5%;left:-15%;width:34%}.fy{right:-17%;bottom:30%;width:32%;transform:scaleX(-1)}.op{top:-1%;right:-12%;width:46%}.fy2{left:-16%;bottom:5%;width:32%}
 .jg{display:block;width:78%;margin:44px auto 0}
 .flip{position:relative;perspective:1200px;cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -231,7 +231,7 @@ function pay(){$('#mb').innerHTML=`<p><b>BCA – Bank Central Asia</b><br>SWIFT/
 function map(){$('#mb').innerHTML=`<iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Griya+Sekar+Kinasih+Bekasi&output=embed"></iframe><a class="btn" href="https://maps.app.goo.gl/nQ6C2aG52vvV6xPv5" target="_blank" rel="noopener">Google Maps ↗</a>`+
  [1,2,3,4,5].map(i=>`<div class="row" style="justify-content:flex-start"><span class="ic">${IC[i-1]}</span><span>${T[L]['tr'+i]}</span></div>`).join('')}
 function secret(){$('#mb').innerHTML=`<input id="sc" placeholder="${T[L].code}" autocomplete="off"><button id="sb">${T[L].ok}</button><p id="sr"></p>`;
- $('#sb').onclick=async()=>{const r=await api('secret',{method:'POST',body:JSON.stringify({code:$('#sc').value})});$('#sr').textContent=r&&r.ok?r.info:T[L].bad}}
+ $('#sb').onclick=async()=>{const r=await api('secret',{method:'POST',body:JSON.stringify({code:$('#sc').value})});const o=r&&r.ok;$('#sr').innerHTML=o?'':`<img src="assets/error.png" alt="${T[L].bad}" width="361" height="364" style="display:block;max-width:100%;height:auto;margin:0 auto">`;if(o)$('#sr').textContent=r.info}}
 $('#rf').onsubmit=async e=>{e.preventDefault();const r=await api('rsvp',{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(e.target)))});
  $('#rs').textContent=T[L][r&&r.ok?'thx':'bad2'];if(r&&r.ok){e.target.reset();wishes()}};
 async function wishes(){const w=await api('wishes')||[];$('#wl').replaceChildren(...w.map(x=>{const p=document.createElement('p'),b=document.createElement('b');b.textContent=x.name;p.append(b,' '+x.message);return p}))}
