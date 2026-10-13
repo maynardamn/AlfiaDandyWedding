@@ -3,116 +3,145 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Alfia &amp; Dandy · The Wedding</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Imbue&family=Cormorant+Garamond:wght@400;600&family=Pinyon+Script&family=Noto+Sans+Javanese&family=Amiri&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Imbue&family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+Javanese&family=Amiri&display=swap" rel="stylesheet">
 <style>
-:root{--g:#002b06;--gold:#ffe2a2;--mar:#6e0f2d;--cr:#f2ebdc;--grn:#005b11;--red:#6e0f0f}
-*{box-sizing:border-box}
-body{margin:0;background:var(--g);color:var(--gold);font:19px/1.55 'Cormorant Garamond',serif;display:flex;justify-content:center;padding-top:env(safe-area-inset-top)}
-main{width:100%;max-width:480px;overflow:hidden}
-section{padding:44px 24px;text-align:center}
-.cr{background:var(--cr);color:var(--mar)}.mr{background:var(--mar)}
-.disp{font:700 clamp(44px,15vw,72px)/1 Imbue,serif;margin:0}
-.sc{font-family:'Pinyon Script',cursive}.jv{font-family:'Noto Sans Javanese',serif;font-size:22px}
-.ar{font:24px/2 Amiri,serif;direction:rtl}
-.pill{background:var(--red);border-radius:60px;padding:16px 30px;display:inline-block;margin:22px 0}
-.pill small{display:block;font-size:16px}
-#cd{display:flex;gap:20px;justify-content:center}#cd b{font:700 40px Imbue,serif;display:block}#cd i{font-size:12px;font-style:normal}
-.ph,video{width:100%;border-radius:56px;display:block;margin:18px 0;background:#0002;aspect-ratio:3/4;object-fit:cover}
-video{aspect-ratio:9/16}
-h2{font:700 34px/1.1 Imbue,serif;margin:0 0 12px}
-button,.btn{background:var(--mar);color:var(--gold);border:0;border-radius:40px;padding:10px 24px;font:600 18px 'Cormorant Garamond',serif;cursor:pointer;text-decoration:none;display:inline-block;margin:6px}
+:root{--g:#002b06;--gold:#ffe2a2;--mar:#6e0f2d;--cr:#f2ebdc;--grn:#005b11;--red:#6e0f0f;--gl:linear-gradient(180deg,#fff6dc,#ffe2a2 55%,#c79b45)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#001a04;color:var(--gold);font:19px/1.6 'Cormorant Garamond',serif;display:flex;justify-content:center;padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+main{width:100%;max-width:480px;background:var(--g);overflow-x:clip}
+section{padding:84px 26px;text-align:center;position:relative}
+.cr{background:var(--cr);color:var(--mar)}.mr{background:radial-gradient(120% 70% at 50% 0,#8a1840,var(--mar) 62%)}
+.disp{font:700 clamp(52px,17vw,80px)/.95 Imbue,serif;margin:0}
+h2{font:700 38px/1.05 Imbue,serif;margin:0 0 6px}
+section:not(.cr) :is(h2,.disp){background:var(--gl);-webkit-background-clip:text;background-clip:text;color:transparent}
+.jv{display:block;font:15px/1.6 'Noto Sans Javanese',serif;margin:0 0 14px;opacity:.85}
+.sp{margin-top:40px}
+.ar{font:19px/2 Amiri,serif;direction:rtl}
+.tr{font-size:15px;line-height:1.5;margin:14px 0 6px}
+#hero{padding:0;height:240svh;background:#000}
+.hs{position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+.hbg{position:absolute;inset:-6%;z-index:-1;background:linear-gradient(#0005,#000b),url(assets/hero.jpeg) center/cover;transform:scale(calc(1 + var(--p,0)*.3));filter:blur(calc(var(--p,0)*5px))}
+.h1b{opacity:calc(1 - var(--p,0)*2.2);transform:translateY(calc(var(--p,0)*-70px)) scale(calc(1 - var(--p,0)*.1))}
+.h2b{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);opacity:clamp(0,calc((var(--p,0) - .3)*3),1);display:flex;flex-direction:column;align-items:center;gap:32px}
+.scr{position:absolute;bottom:28px;font-size:24px;opacity:calc(1 - var(--p,0)*6);animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(9px)}}
+.pill{background:#6e0f0fcc;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid #ffe2a244;border-radius:60px;padding:16px 30px;display:inline-block}
+.pill small{display:block;font-size:17px}
+#cd{display:flex;gap:10px;justify-content:center}
+#cd div{background:#ffffff14;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid #ffe2a233;border-radius:20px;padding:12px 8px;min-width:68px}
+#cd b{font:700 38px Imbue,serif;display:block;background:var(--gl);-webkit-background-clip:text;background-clip:text;color:transparent}#cd i{font-size:11px;font-style:normal;letter-spacing:.12em}
+.ph{width:100%;display:block;margin:26px 0;background:#0002;aspect-ratio:2/3;object-fit:cover;will-change:clip-path;clip-path:inset(calc((1 - var(--p,1))*14%) calc((1 - var(--p,1))*12%) round calc(64px - var(--p,1)*30px));transform:scale(calc(.93 + var(--p,1)*.07))}
+.fl{width:100%;display:block;margin:16px 0}
+.lg{display:block;margin:36px auto 0;width:150px}.big{width:80%;margin:0 auto 72px}.huge{width:240px;margin:0 auto}
+.rv{opacity:0;transform:translateY(34px);filter:blur(8px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),filter .9s}
+.rv.in{opacity:1;transform:none;filter:none}
+button,.btn{background:var(--mar);color:var(--gold);border:0;border-radius:40px;padding:11px 26px;font:600 18px 'Cormorant Garamond',serif;cursor:pointer;text-decoration:none;display:inline-block;margin:6px}
 .mr button,.mr .btn{background:var(--gold);color:var(--mar)}
 button:focus-visible,input:focus-visible{outline:3px solid var(--grn);outline-offset:2px}
-#gate{position:fixed;inset:0;z-index:20;background:radial-gradient(circle at 50% 30%,#0a4a14,var(--g));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
-#gate.off{display:none}#gn{font:700 34px Imbue,serif;margin:6px 0 18px;word-break:break-word}
-#mus{position:fixed;right:12px;top:calc(12px + env(safe-area-inset-top));z-index:8;padding:6px 12px;background:var(--gold);color:var(--mar)}
-.ov{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;z-index:30;padding:16px}.ov.on{display:flex}
-.box{background:var(--cr);color:var(--mar);border-radius:28px;max-height:86vh;overflow:auto;width:100%;max-width:440px;padding:26px 22px;position:relative}
+#bar{position:fixed;top:0;left:0;height:3px;width:calc(var(--sp,0)*100%);background:var(--gl);z-index:40}
+#dock{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translate(-50%,160%);display:flex;gap:2px;padding:7px 9px;border-radius:999px;background:#0a2a0fb8;backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);border:1px solid #ffe2a233;box-shadow:0 10px 40px #000a;z-index:15;transition:transform .9s cubic-bezier(.2,.9,.2,1) .5s}
+#dock.on{transform:translate(-50%,0)}
+#dock button{margin:0;background:none;color:var(--gold);padding:8px 14px;font-size:22px;line-height:1;border-radius:999px}
+#dock button:active{background:#ffe2a226}
+#gate{position:fixed;inset:0;z-index:20;background:linear-gradient(#002b06cc,#002b06f0),url(assets/hero.jpeg) center/cover;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .9s,visibility .9s}
+#gate.off{opacity:0;visibility:hidden;pointer-events:none}#gn{font:700 36px Imbue,serif;margin:6px 0 22px;word-break:break-word;background:var(--gl);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ov{position:fixed;inset:0;background:#0009;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:flex-end;justify-content:center;z-index:30}.ov.on{display:flex}
+.box{background:#f2ebdcf5;color:var(--mar);border-radius:30px 30px 0 0;max-height:88vh;overflow:auto;width:100%;max-width:480px;padding:28px 22px calc(28px + env(safe-area-inset-bottom));position:relative;animation:up .5s cubic-bezier(.2,.9,.2,1)}
+@keyframes up{from{transform:translateY(100%)}}
 .box h3{font:700 28px Imbue,serif;margin:0 0 12px}
 .x{position:absolute;top:8px;right:10px;margin:0;padding:2px 12px;font-size:26px}
 .row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #6e0f2d33;text-align:left}
-.row.done{opacity:.4;pointer-events:none;text-decoration:line-through}
-.tabs{display:flex;flex-wrap:wrap;margin-bottom:8px}
-iframe{width:100%;height:220px;border:0;border-radius:18px}
-details{text-align:left;margin:8px 0}summary{cursor:pointer;font-weight:600}
-input,select,textarea{width:100%;padding:11px;margin:5px 0;border-radius:14px;border:1px solid #6e0f2d55;font:inherit;background:#fff;color:#222}
+.row.done{opacity:.4;pointer-events:none;text-decoration:line-through}.row .ic{font-size:26px}
+iframe{width:100%;height:220px;border:0;border-radius:18px;margin-bottom:8px}
+input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:14px;border:1px solid #6e0f2d55;font:inherit;background:#fff;color:#222}
 #wl p{margin:8px 0;font-size:17px}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;filter:none!important;transition:none}.scr{animation:none}html{scroll-behavior:auto}}
 </style></head><body>
 
 <div id="gate">
  <p>Dear · Kepada Yth.</p><div id="gn">Guest</div>
- <h1 class="sc" style="font-size:54px;margin:0 0 14px">Alfia &amp; Dandy</h1>
+ <p>You are invited · Anda diundang</p>
  <p>Choose language · Pilih bahasa</p>
  <div><button onclick="go('en')">English</button><button onclick="go('id')">Bahasa Indonesia</button></div>
 </div>
 <audio id="bgm" src="assets/song.mp3" loop preload="none"></audio>
-<button id="mus" onclick="mus()" aria-label="Music">♪</button>
+<div id="bar"></div>
+<nav id="dock"><button onclick="openM('loc',map)" aria-label="Map">📍</button><button onclick="openM('gift',gifts)" aria-label="Gifts">🎁</button><button onclick="openM('pay',pay)" aria-label="Money">💳</button><button onclick="document.getElementById('rsvp').scrollIntoView()" aria-label="RSVP">✉️</button><button id="mus" onclick="mus()" aria-label="Music">♪</button></nav>
 
 <main>
-<section id="hero">
- <h1 class="disp">The Wedding</h1><div class="jv">ꦥꦺꦱ꧀ꦠꦩꦤ꧀ꦠꦺꦤ꧀</div>
- <img class="ph" src="assets/hero.jpg" alt="" loading="lazy" style="aspect-ratio:3/4">
- <div class="pill">31 January 2027 M<small>23 Ruwah 1960 AJ</small></div>
- <div id="cd"><div><b>00</b><i data-t="d">DAYS</i></div><div><b>00</b><i data-t="h">HOURS</i></div><div><b>00</b><i data-t="m">MINS</i></div><div><b>00</b><i data-t="s">SECS</i></div></div>
-</section>
+<section id="hero"><div class="hs"><div class="hbg"></div>
+ <div class="h1b"><p data-t="inv"></p><h1 class="disp">The Wedding</h1><span class="jv">ꦥꦺꦱ꧀ꦠꦩꦤ꧀ꦠꦺꦤ꧀</span></div>
+ <div class="h2b"><div class="pill">31 January 2027 M<small>22 Ruwah 1960 Be</small></div>
+ <div id="cd"><div><b>00</b><i data-t="d">DAYS</i></div><div><b>00</b><i data-t="h">HOURS</i></div><div><b>00</b><i data-t="m">MINS</i></div><div><b>00</b><i data-t="s">SECS</i></div></div></div>
+ <div class="scr">⌄</div></div></section>
 
 <section>
- <h1 class="sc" style="font-size:64px;margin:0 0 24px">Alfia &amp; Dandy</h1>
+ <img class="lg big" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy">
  <div class="ar">هُوَ ٱلَّذِى خَلَقَكُم مِّن نَّفْسٍۢ وَٰحِدَةٍۢ وَجَعَلَ مِنْهَا زَوْجَهَا لِيَسْكُنَ إِلَيْهَا ۖ فَلَمَّا تَغَشَّىٰهَا حَمَلَتْ حَمْلًۭا خَفِيفًۭا فَمَرَّتْ بِهِۦ ۖ فَلَمَّآ أَثْقَلَت دَّعَوَا ٱللَّهَ رَبَّهُمَا لَئِنْ ءَاتَيْتَنَا صَـٰلِحًۭا لَّنَكُونَنَّ مِنَ ٱلشَّـٰكِرِينَ</div>
- <p data-t="quote"></p><b>QS. Al-A‘raf (7): 189</b>
+ <p class="tr" data-t="quote"></p><small><b>QS. Al-A‘raf (7): 189</b></small>
 </section>
 
 <section class="cr">
  <p data-t="invite"></p><p data-t="journey"></p>
  <p data-t="born"></p><h2>R. Dandy Yusuf Maynardi</h2>
- <img class="ph" src="assets/groom.webp" alt="" loading="lazy">
+ <img class="ph" src="assets/groom.jpeg" alt="" loading="lazy">
  <p><span data-t="son"></span><br>Bpk. Pratama L Wardhana &amp; Ibu Herudyah Fristiwanti</p>
- <p data-t="venture"></p><p data-t="woman"></p><h2>Alfiaturrokhmah</h2>
- <img class="ph" src="assets/bride.webp" alt="" loading="lazy">
+ <p class="sp" data-t="venture"></p><p data-t="woman"></p><h2>Alfiaturrokhmah</h2>
+ <img class="ph" src="assets/bride.jpeg" alt="" loading="lazy">
  <p><span data-t="dau"></span><br>Bpk. Mei Sugiantoro &amp; Ibu Susy Wulandari</p>
+ <img class="lg" src="assets/logo-green.png" alt="Alfia &amp; Dandy">
 </section>
 
 <section>
+ <img class="lg" style="margin:0 auto 24px" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy">
  <p data-t="story1"></p>
- <video id="vid" src="assets/video.mp4" poster="assets/poster.webp" muted loop playsinline preload="none"></video>
+ <img class="ph" src="assets/together1.jpeg" alt="" loading="lazy">
  <p data-t="story2"></p>
+ <img class="ph" src="assets/together2.jpeg" alt="" loading="lazy">
 </section>
 
 <section class="cr">
- <h2 style="color:var(--grn)" data-t="tp"></h2><div class="jv" style="color:var(--grn)">ꦮꦼꦏ꧀ꦠꦸꦭꦤ꧀ꦥꦁꦒꦺꦴꦤꦤ꧀</div>
- <h2 style="font-size:54px;margin-top:26px">Akad</h2><p><b>15.30 – 17.00</b></p>
- <h2 style="font-size:54px;margin-top:26px">Resepsi</h2><p><b>19.00 – 21.00</b></p>
- <h2 style="font-size:28px">Griya Sekar Kinasih</h2>
+ <h2 style="color:var(--grn)" data-t="tp"></h2><span class="jv" style="color:var(--grn)">ꦮꦼꦏ꧀ꦠꦸꦭꦤ꧀ꦥꦁꦒꦺꦴꦤꦤ꧀</span>
+ <h2 class="sp" style="font-size:54px">Akad</h2><span class="jv">ꦄꦏꦣ꧀</span><p><b>15.30 – 17.00</b></p>
+ <h2 class="sp" style="font-size:54px">Resepsi</h2><span class="jv">ꦉꦱꦺꦥ꧀ꦱꦶ</span><p><b>19.00 – 21.00</b></p>
+ <h2 class="sp" style="font-size:28px">Griya Sekar Kinasih</h2><span class="jv">ꦒꦿꦶꦪꦱꦼꦏꦂꦏꦶꦤꦱꦶꦃ</span>
  <p>Jl. H. Nonon Sonthanie, Duren Jaya, Bekasi Timur, Kota Bekasi, West Java 17112</p>
  <button onclick="openM('loc',map)" data-t="view"></button>
  <button onclick="openM('sp',secret)" data-t="sp"></button>
+ <img class="lg" src="assets/logo-green.png" alt="Alfia &amp; Dandy">
 </section>
 
 <section class="mr">
- <h2 data-t="att"></h2><p data-t="att1"></p><p>Sumangga ngagem busana ingkang prasaja lan santun.</p>
+ <h2 data-t="att"></h2><span class="jv">ꦥꦤ꧀ꦝꦸꦮꦤ꧀ꦱꦤ꧀ꦝꦔꦤ꧀</span>
+ <img class="fl" src="assets/dresscode.PNG" alt="" loading="lazy">
  <div class="disp" style="font-size:44px;margin:14px 0">#Berkain</div><p data-t="att2"></p>
+ <p class="sp" data-t="att1"></p><p>Sumangga ngagem busana ingkang prasaja lan santun.</p>
+ <p style="margin-bottom:0" data-t="ty"></p><span class="jv">ꦆꦁꦏꦁꦩꦠꦸꦫꦏꦺꦤ꧀ꦱꦼꦩ꧀ꦧꦃꦤꦸꦮꦸꦤ꧀</span>
+ <img class="lg" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy">
 </section>
 
 <section class="mr" style="padding-top:0">
- <h2 data-t="gift"></h2><p data-t="giftp"></p>
+ <h2 data-t="gift"></h2><span class="jv">ꦲꦣꦶꦪꦃꦩꦤ꧀ꦠꦺꦤ꧀</span><p data-t="giftp"></p>
  <p><b>Perumahan Vertihome Serpong Blok B No 4, Jl. Salem 2, RT 03 / RW 01, Kel Serpong, Kec Serpong, Kota Tangerang Selatan, Banten 15311</b></p>
  <button onclick="openM('gift',gifts)" data-t="reg"></button>
  <button onclick="openM('pay',pay)" data-t="sendm"></button>
+ <img class="lg" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy">
 </section>
 
-<section class="cr">
+<section class="cr" id="rsvp">
  <h2 data-t="rsvp"></h2>
  <form id="rf">
   <input id="nm" name="name" data-p="yn" maxlength="80" required>
   <select name="attending"><option value="yes" data-t="yes"></option><option value="no" data-t="no"></option></select>
-  <input name="guests" type="number" min="1" max="10" value="1" aria-label="Guests">
+  <select name="guests" aria-label="Pax"><option value="1">1 pax</option><option value="2">2 pax</option><option value="3">3 pax</option><option value="4">4 pax</option></select>
   <textarea name="message" rows="3" maxlength="300" data-p="wish"></textarea>
   <button data-t="send"></button><p id="rs"></p>
  </form>
  <div id="wl"></div>
+ <img class="lg" src="assets/logo-green.png" alt="Alfia &amp; Dandy">
 </section>
-<section class="mr"><p class="sc" style="font-size:40px;margin:0">Alfia &amp; Dandy</p></section>
+
+<section class="mr"><img class="lg huge" style="margin-top:0" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy"></section>
 </main>
 
 <div class="ov" id="m"><div class="box"><button class="x" onclick="closeM()" aria-label="Close">×</button><h3 id="mt"></h3><div id="mb"></div></div></div>
@@ -121,33 +150,39 @@ input,select,textarea{width:100%;padding:11px;margin:5px 0;border-radius:14px;bo
 /* ===== EDIT THESE ===== */
 const TARGET=new Date('2027-01-31T15:30:00+07:00');
 const GIFTS=[{id:'g1',name:'Example gift 1',url:'https://example.com/1'},{id:'g2',name:'Example gift 2',url:'https://example.com/2'}];
-const PAY=[
- {k:'Bank',v:[['BANK NAME – R. Dandy Yusuf Maynardi','0353167593'],['BANK NAME – Alfiaturrokhmah','8850976911']]},
- {k:'PayPal / Wise',v:[['PayPal','https://paypal.me/yourname'],['Wise','you@email.com']]},
- {k:'QRIS',img:'assets/qris.webp'},
- {k:'Crypto',v:[['USDT (TRC20)','PASTE_ADDRESS'],['BTC','PASTE_ADDRESS']]}];
-const TRANSIT=[['From Jakarta (KRL)','Commuter Line to Bekasi Station, then a 10–20 min Grab/Gojek ride. (Verify before publishing)'],['By car','Use the Google Maps link above. (Add toll exit + parking notes)'],['From Tangerang Selatan','(Add route here)']];
+const ACC=[['R. Dandy Yusuf Maynardi','0353167593'],['Alfiaturrokhmah','8850976911']];
+const IC=['🚆','🚌','🚌','🚈','🚗'];
 /* ===== TEXT ===== */
-const T={en:{d:'DAYS',h:'HOURS',m:'MINS',s:'SECS',
+const T={en:{d:'DAYS',h:'HOURS',m:'MINS',s:'SECS',inv:'You are invited to',
 quote:'"It is He who created you from a single soul and made from it, its mate that he might find tranquility in her. And when he covers her, she carries a light burden and continues therein. And when it becomes heavy, they both invoke Allah, their Lord, \'If You should give us a good [child], we will surely be among the grateful.\'"',
 invite:'We would like to invite you to our wedding',journey:'where our journey begins here…',born:'Born and raised in Surabaya, a man called…',son:'Son of',
 venture:'who ventured to Jakarta in pursuit of his dreams, crossed paths with…',woman:'a woman of Yogyakarta heritage, her name is…',dau:'Daughter of',
 story1:'In the midst of life in Greater Jakarta, a chance match on Bumble brought their worlds together.',story2:'Neither could have known that a simple swipe would lead to a lifetime of love, and to this very day.',
 tp:'Insight to Time & Place',view:'View Location',loc:'Location & Getting There',sp:'Special Invitation',
-att:'Attire Guide.',att1:'The Bride & Groom want to keep the event simple & njawani.',att2:'Wear your Batik & Kebaya.',
+att:'Attire Guide.',att1:'The Bride & Groom want to keep the event simple & njawani.',att2:'Wear your Batik & Kebaya.',ty:'Thank you.',
 gift:'Wedding Gift',giftp:'Your presence is our greatest gift. If you would like to celebrate with us through a gift, we welcome a cashless contribution with gratitude.',
 reg:'Gift Registry',sendm:'Send Money',pay:'Send Money',rsvp:'RSVP & Wishes',yn:'Your name',wish:'Your wishes',yes:'I will attend',no:'Sorry, I can’t attend',send:'Send',
-buy:'Buy ↗',got:'I bought this',copy:'Copy',code:'Enter code',ok:'Unlock',bad:'Wrong code or error. Try again.',thx:'Thank you! Your reply is saved.',bad2:'Could not send. Please try again.',ask:'Your name for the gift note:'},
-id:{d:'HARI',h:'JAM',m:'MNT',s:'DTK',
+buy:'Buy ↗',got:'I bought this',copy:'Copy',code:'Enter code',ok:'Unlock',bad:'Wrong code or error. Try again.',thx:'Thank you! Your reply is saved.',bad2:'Could not send. Please try again.',ask:'Your name for the gift note:',
+tr1:'<b>KRL Commuter</b> – Blue Line Kampung Bandan–Cikarang, alight at Bekasi Timur Station (2.9 km from venue)',
+tr2:'<b>Transjakarta B21</b> Cawang–Bekasi Timur, alight at Transpark Juanda (3.5 km from venue)',
+tr3:'<b>Transjakarta B25</b> Dukuh Atas–Bekasi Timur, alight at Terminal Bekasi (3.5 km from venue)',
+tr4:'<b>LRT Jabodebek</b> Dukuh Atas–Jatimulya: Bekasi Line for Jatimulya, alight at Jatimulya Station (4.8 km from venue)',
+tr5:'<b>By Car/Taxi</b> – Exit from Bekasi Timur toll gate (4.8 km) or from Becakayu toll gate (6.9 km from venue)'},
+id:{d:'HARI',h:'JAM',m:'MNT',s:'DTK',inv:'Anda diundang ke',
 quote:'"Dialah yang menciptakan kamu dari diri yang satu, dan darinya Dia menciptakan pasangannya, agar dia merasa tenteram kepadanya. Maka setelah dicampurinya, istrinya mengandung kandungan yang ringan, dan teruslah dia merasa ringan. Ketika dia merasa berat, keduanya memohon kepada Allah, Tuhan mereka, \'Jika Engkau memberi kami anak yang saleh, tentulah kami akan selalu bersyukur.\'"',
 invite:'Dengan hormat kami mengundang Anda ke pernikahan kami',journey:'tempat perjalanan kami dimulai…',born:'Lahir dan besar di Surabaya, seorang pria bernama…',son:'Putra dari',
 venture:'yang merantau ke Jakarta mengejar mimpinya, bertemu dengan…',woman:'seorang perempuan berdarah Yogyakarta, bernama…',dau:'Putri dari',
 story1:'Di tengah hiruk-pikuk Jabodetabek, sebuah match di Bumble mempertemukan dunia mereka.',story2:'Tak ada yang tahu, satu geseran sederhana akan berujung pada cinta seumur hidup, hingga hari ini.',
 tp:'Waktu & Tempat',view:'Lihat Lokasi',loc:'Lokasi & Cara ke Sana',sp:'Undangan Khusus',
-att:'Panduan Busana.',att1:'Mempelai ingin acara ini sederhana & njawani.',att2:'Kenakan Batik & Kebaya Anda.',
+att:'Panduan Busana.',att1:'Mempelai ingin acara ini sederhana & njawani.',att2:'Kenakan Batik & Kebaya Anda.',ty:'Terima kasih.',
 gift:'Hadiah Pernikahan',giftp:'Kehadiran Anda adalah hadiah terbesar kami. Jika berkenan memberi hadiah, kami dengan senang hati menerima kado nontunai.',
 reg:'Daftar Kado',sendm:'Kirim Uang',pay:'Kirim Uang',rsvp:'RSVP & Ucapan',yn:'Nama Anda',wish:'Ucapan & doa',yes:'Saya akan hadir',no:'Maaf, tidak bisa hadir',send:'Kirim',
-buy:'Beli ↗',got:'Sudah saya beli',copy:'Salin',code:'Masukkan kode',ok:'Buka',bad:'Kode salah atau terjadi kesalahan.',thx:'Terima kasih! Jawaban Anda tersimpan.',bad2:'Gagal mengirim. Coba lagi.',ask:'Nama Anda untuk catatan kado:'}};
+buy:'Beli ↗',got:'Sudah saya beli',copy:'Salin',code:'Masukkan kode',ok:'Buka',bad:'Kode salah atau terjadi kesalahan.',thx:'Terima kasih! Jawaban Anda tersimpan.',bad2:'Gagal mengirim. Coba lagi.',ask:'Nama Anda untuk catatan kado:',
+tr1:'<b>KRL Commuter</b> – Lintas Biru Kampung Bandan–Cikarang, turun di Stasiun Bekasi Timur (2,9 km dari lokasi)',
+tr2:'<b>Transjakarta B21</b> Cawang–Bekasi Timur, turun di Transpark Juanda (3,5 km dari lokasi)',
+tr3:'<b>Transjakarta B25</b> Dukuh Atas–Bekasi Timur, turun di Terminal Bekasi (3,5 km dari lokasi)',
+tr4:'<b>LRT Jabodebek</b> Dukuh Atas–Jatimulya: Lin Bekasi arah Jatimulya, turun di Stasiun Jatimulya (4,8 km dari lokasi)',
+tr5:'<b>Mobil/Taksi</b> – Keluar di Gerbang Tol Bekasi Timur (4,8 km) atau Gerbang Tol Becakayu (6,9 km dari lokasi)'}};
 /* ===== CORE ===== */
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const api=(p,o)=>fetch('/api/'+p,o).then(r=>r.json()).catch(()=>null);
@@ -155,11 +190,10 @@ const to=(new URLSearchParams(location.search).get('to')||'').slice(0,60);
 $('#gn').textContent=to||'Guest';
 let L='en';
 function lang(l){L=l;document.documentElement.lang=l;$$('[data-t]').forEach(e=>e.innerHTML=T[l][e.dataset.t]);$$('[data-p]').forEach(e=>e.placeholder=T[l][e.dataset.p])}
-function go(l){lang(l);$('#gate').classList.add('off');$('#bgm').play().catch(()=>{});$('#nm').value=to;wishes()}
+function go(l){lang(l);$('#gate').classList.add('off');$('#dock').classList.add('on');$('#bgm').play().catch(()=>{});$('#nm').value=to;wishes()}
 function mus(){const a=$('#bgm');a.paused?a.play():a.pause()}
 setInterval(()=>{const s=Math.max(0,(TARGET-Date.now())/1e3|0),v=[s/86400|0,s%86400/3600|0,s%3600/60|0,s%60];$$('#cd b').forEach((e,i)=>e.textContent=String(v[i]).padStart(2,'0'))},1000);
-new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?e.target.play().catch(()=>{}):e.target.pause()),{threshold:.5}).observe($('#vid'));
-/* modal: same page, X / backdrop / Esc / phone Back all close it */
+/* modal: same page; X / backdrop / Esc / phone Back all close it */
 function openM(t,f){$('#mt').innerHTML=T[L][t];$('#m').classList.add('on');history.pushState({m:1},'');f()}
 function closeM(){if(!$('#m').classList.contains('on'))return;$('#m').classList.remove('on');$('#mb').innerHTML='';if(history.state&&history.state.m)history.back()}
 addEventListener('popstate',()=>{$('#m').classList.remove('on')});
@@ -167,15 +201,27 @@ $('#m').onclick=e=>e.target.id=='m'&&closeM();addEventListener('keydown',e=>e.ke
 async function gifts(){const c=await api('gifts')||[];
  $('#mb').innerHTML=GIFTS.map(g=>`<div class="row ${c.includes(g.id)?'done':''}"><span>${g.name}</span><span><a href="${g.url}" target="_blank" rel="noopener">${T[L].buy}</a> <button data-g="${g.id}" ${c.includes(g.id)?'disabled':''}>${T[L].got}</button></span></div>`).join('');
  $$('[data-g]').forEach(b=>b.onclick=async()=>{await api('gifts',{method:'POST',body:JSON.stringify({id:b.dataset.g,by:prompt(T[L].ask,to)||to})});gifts()})}
-function pay(){$('#mb').innerHTML=`<div class="tabs">${PAY.map((p,i)=>`<button data-i="${i}">${p.k}</button>`).join('')}</div><div id="pp"></div>`;
- const show=i=>{const p=PAY[i];$('#pp').innerHTML=p.img?`<img src="${p.img}" alt="QRIS" style="width:100%">`:p.v.map(([a,b])=>`<div class="row"><span>${a}<br><b>${b}</b></span><button data-c="${b}">${T[L].copy}</button></div>`).join('');
-  $$('[data-c]').forEach(x=>x.onclick=()=>{navigator.clipboard.writeText(x.dataset.c);x.textContent='✓'})};
- $$('.tabs button').forEach(b=>b.onclick=()=>show(b.dataset.i));show(0)}
-function map(){$('#mb').innerHTML=`<iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Griya+Sekar+Kinasih+Bekasi&output=embed"></iframe><a class="btn" href="https://maps.app.goo.gl/nQ6C2aG52vvV6xPv5" target="_blank" rel="noopener">Google Maps ↗</a>`+TRANSIT.map(t=>`<details><summary>${t[0]}</summary><p>${t[1]}</p></details>`).join('')}
+function pay(){$('#mb').innerHTML=`<p><b>BCA – Bank Central Asia</b><br>SWIFT/BIC: CENAIDJA</p>`+
+ ACC.map(([n,a])=>`<div class="row"><span>${n}<br><b>${a.replace(/(\d{4})(\d{3})(\d{3})/,'$1 $2 $3')}</b></span><button data-c="${a}">${T[L].copy}</button></div>`).join('')+
+ `<p style="margin-top:18px"><b>QRIS</b></p><img src="assets/qris.jpeg" alt="QRIS" style="width:100%" loading="lazy">`;
+ $$('[data-c]').forEach(x=>x.onclick=()=>{navigator.clipboard.writeText(x.dataset.c);x.textContent='✓'})}
+function map(){$('#mb').innerHTML=`<iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Griya+Sekar+Kinasih+Bekasi&output=embed"></iframe><a class="btn" href="https://maps.app.goo.gl/nQ6C2aG52vvV6xPv5" target="_blank" rel="noopener">Google Maps ↗</a>`+
+ [1,2,3,4,5].map(i=>`<div class="row" style="justify-content:flex-start"><span class="ic">${IC[i-1]}</span><span>${T[L]['tr'+i]}</span></div>`).join('')}
 function secret(){$('#mb').innerHTML=`<input id="sc" placeholder="${T[L].code}" autocomplete="off"><button id="sb">${T[L].ok}</button><p id="sr"></p>`;
  $('#sb').onclick=async()=>{const r=await api('secret',{method:'POST',body:JSON.stringify({code:$('#sc').value})});$('#sr').textContent=r&&r.ok?r.info:T[L].bad}}
 $('#rf').onsubmit=async e=>{e.preventDefault();const r=await api('rsvp',{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(e.target)))});
  $('#rs').textContent=T[L][r&&r.ok?'thx':'bad2'];if(r&&r.ok){e.target.reset();wishes()}};
 async function wishes(){const w=await api('wishes')||[];$('#wl').replaceChildren(...w.map(x=>{const p=document.createElement('p');p.textContent=x.name+': '+x.message;return p}))}
+/* ===== MOTION ===== */
+const cl=v=>Math.min(1,Math.max(0,v));
+$$('section:not(#hero)').forEach(sec=>[...sec.querySelectorAll('p,h2,.pill,button,.btn,.jv,.fl,.lg,.ar')].forEach((e,i)=>{e.classList.add('rv');e.style.transitionDelay=(i%3)*90+'ms'}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+$$('.rv').forEach(e=>io.observe(e));
+const hero=$('#hero'),phs=$$('.ph'),root=document.documentElement;let tk=0;
+function frame(){tk=0;const vh=innerHeight,y=scrollY;
+ hero.style.setProperty('--p',cl(y/(hero.offsetHeight-vh)));
+ phs.forEach(e=>e.style.setProperty('--p',cl((vh-e.getBoundingClientRect().top)/(vh*.65))));
+ root.style.setProperty('--sp',cl(y/(document.body.scrollHeight-vh)))}
+addEventListener('scroll',()=>{tk||(tk=requestAnimationFrame(frame))},{passive:true});frame();
 lang('en');
 </script></body></html>
