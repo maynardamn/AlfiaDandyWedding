@@ -10,9 +10,9 @@
 body{margin:0;background:#001a04;color:var(--gold);font:19px/1.6 'Cormorant Garamond',serif;display:flex;justify-content:center;padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 main{width:100%;max-width:480px;background:var(--g);overflow-x:clip}
 section{padding:84px 26px;text-align:center;position:relative}
-.cr{background:var(--cr);color:var(--mar)}.mr{background:radial-gradient(120% 70% at 50% 0,#8a1840,var(--mar) 62%)}
-.disp{font:700 clamp(52px,17vw,80px)/.95 Imbue,serif;margin:0}
-h2{font:700 38px/1.05 Imbue,serif;margin:0 0 6px}
+.cr{background:var(--cr);color:var(--mar)}.mr{background:var(--mar)}
+.disp{font:700 clamp(52px,17vw,80px)/1.05 Imbue,serif;margin:0 0 -.1em;padding-bottom:.2em}
+h2{font:700 38px/1.05 Imbue,serif;margin:0 0 6px;padding-bottom:.12em}
 section:not(.cr) :is(h2,.disp){background:var(--gl);-webkit-background-clip:text;background-clip:text;color:transparent}
 .jv{display:block;font:15px/1.6 'Noto Sans Javanese',serif;margin:0 0 14px;opacity:.85}
 .sp{margin-top:40px}
@@ -20,7 +20,7 @@ section:not(.cr) :is(h2,.disp){background:var(--gl);-webkit-background-clip:text
 .tr{font-size:15px;line-height:1.5;margin:14px 0 6px}
 #hero{padding:0;height:240svh;background:#000}
 .hs{position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
-.hbg{position:absolute;inset:-6%;z-index:-1;background:linear-gradient(#0005,#000b),url(assets/hero.jpeg) center/cover;transform:scale(calc(1 + var(--p,0)*.3));filter:blur(calc(var(--p,0)*5px))}
+.hbg{position:absolute;inset:-6%;z-index:-1;background:url(assets/hero.jpeg) center/cover;transform:scale(calc(1 + var(--p,0)*.3));filter:blur(calc(var(--p,0)*5px))}
 .h1b{opacity:calc(1 - var(--p,0)*2.2);transform:translateY(calc(var(--p,0)*-70px)) scale(calc(1 - var(--p,0)*.1))}
 .h2b{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);opacity:clamp(0,calc((var(--p,0) - .3)*3),1);display:flex;flex-direction:column;align-items:center;gap:32px}
 .scr{position:absolute;bottom:28px;font-size:24px;opacity:calc(1 - var(--p,0)*6);animation:bob 2s infinite}
@@ -43,7 +43,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--grn);outline-of
 #dock.on{transform:translate(-50%,0)}
 #dock button{margin:0;background:none;color:var(--gold);padding:8px 14px;font-size:22px;line-height:1;border-radius:999px}
 #dock button:active{background:#ffe2a226}
-#gate{position:fixed;inset:0;z-index:20;background:linear-gradient(#002b06cc,#002b06f0),url(assets/hero.jpeg) center/cover;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .9s,visibility .9s}
+#gate{position:fixed;inset:0;z-index:20;background:linear-gradient(#5a0d26f5,#2e0612fc),url(assets/hero.jpeg) center/cover;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .9s,visibility .9s}
 #gate.off{opacity:0;visibility:hidden;pointer-events:none}#gn{font:700 36px Imbue,serif;margin:6px 0 22px;word-break:break-word;background:var(--gl);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ov{position:fixed;inset:0;background:#0009;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:flex-end;justify-content:center;z-index:30}.ov.on{display:flex}
 .box{background:#f2ebdcf5;color:var(--mar);border-radius:30px 30px 0 0;max-height:88vh;overflow:auto;width:100%;max-width:480px;padding:28px 22px calc(28px + env(safe-area-inset-bottom));position:relative;animation:up .5s cubic-bezier(.2,.9,.2,1)}
@@ -56,6 +56,22 @@ iframe{width:100%;height:220px;border:0;border-radius:18px;margin-bottom:8px}
 input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:14px;border:1px solid #6e0f2d55;font:inherit;background:#fff;color:#222}
 #wl p{margin:8px 0;font-size:17px}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;filter:none!important;transition:none}.scr{animation:none}html{scroll-behavior:auto}}
+.sub{display:block;font:15px/1.6 'Cormorant Garamond',serif;letter-spacing:.04em;margin:0 0 12px;opacity:.9}.jf{font-family:'Noto Sans Javanese',serif}
+.qs{min-height:100svh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(#002b06f2,#002b06c0 45%,#002b06f5),url(assets/temple.jpeg) center/cover}
+.fig{position:relative}.deco{position:absolute;pointer-events:none;z-index:0;max-width:none}
+.wyg,.wyb{left:-9%;bottom:-7%;width:36%;z-index:2}
+.fr{top:0;left:-15%;width:44%}.fy{right:-17%;top:48%;width:42%;transform:scaleX(-1)}.op{top:-1%;right:-12%;width:46%}.fy2{left:-16%;bottom:60px;width:42%}
+.jg{display:block;width:78%;margin:44px auto 0}
+.flip{position:relative;perspective:1200px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.fi{position:absolute;inset:0;transition:transform .8s cubic-bezier(.3,.8,.2,1);transform-style:preserve-3d}.flip.on .fi{transform:rotateY(180deg)}
+.front,.back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.front img{width:100%;height:100%;object-fit:cover;display:block}
+.back{transform:rotateY(180deg);background:radial-gradient(circle at 50% 30%,#8a1840,var(--mar));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:var(--gold)}.back img{width:55%}
+.nudge{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#000a;color:var(--gold);padding:7px 16px;border-radius:99px;font-size:15px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid #ffe2a255;animation:pl 2s infinite;pointer-events:none}
+@keyframes pl{0%,100%{box-shadow:0 0 0 0 #ffe2a266;transform:translateX(-50%) translateY(0)}50%{box-shadow:0 0 0 12px #ffe2a200;transform:translateX(-50%) translateY(-5px)}}
+.col{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:8px}.col img{width:100%;height:100%;object-fit:cover;border-radius:16px;background:#6e0f2d22}
+.col img:nth-child(1){grid-row:span 2}.col img:nth-child(4){grid-column:span 2}
+.tiny{font-size:11px;opacity:.7;margin:0 0 6px}
 </style></head><body>
 
 <div id="gate">
@@ -75,36 +91,39 @@ input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:14px;bo
  <div id="cd"><div><b>00</b><i data-t="d">DAYS</i></div><div><b>00</b><i data-t="h">HOURS</i></div><div><b>00</b><i data-t="m">MINS</i></div><div><b>00</b><i data-t="s">SECS</i></div></div></div>
  <div class="scr">⌄</div></div></section>
 
-<section>
+<section class="qs">
  <img class="lg big" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy">
  <div class="ar">هُوَ ٱلَّذِى خَلَقَكُم مِّن نَّفْسٍۢ وَٰحِدَةٍۢ وَجَعَلَ مِنْهَا زَوْجَهَا لِيَسْكُنَ إِلَيْهَا ۖ فَلَمَّا تَغَشَّىٰهَا حَمَلَتْ حَمْلًۭا خَفِيفًۭا فَمَرَّتْ بِهِۦ ۖ فَلَمَّآ أَثْقَلَت دَّعَوَا ٱللَّهَ رَبَّهُمَا لَئِنْ ءَاتَيْتَنَا صَـٰلِحًۭا لَّنَكُونَنَّ مِنَ ٱلشَّـٰكِرِينَ</div>
  <p class="tr" data-t="quote"></p><small><b>QS. Al-A‘raf (7): 189</b></small>
 </section>
 
 <section class="cr">
+ <img class="deco fr" src="assets/flower_red.png" alt="" onerror="this.remove()"><img class="deco fy" src="assets/flower_yellow.png" alt="" onerror="this.remove()">
  <p data-t="invite"></p><p data-t="journey"></p>
  <p data-t="born"></p><h2>R. Dandy Yusuf Maynardi</h2>
- <img class="ph" src="assets/groom.jpeg" alt="" loading="lazy">
+ <div class="fig"><img class="ph" src="assets/groom.jpeg" alt="" loading="lazy"><img class="deco wyg" src="assets/wayang_groom.png" alt="" onerror="this.remove()"></div>
  <p><span data-t="son"></span><br>Bpk. Pratama L Wardhana &amp; Ibu Herudyah Fristiwanti</p>
  <p class="sp" data-t="venture"></p><p data-t="woman"></p><h2>Alfiaturrokhmah</h2>
- <img class="ph" src="assets/bride.jpeg" alt="" loading="lazy">
+ <div class="fig"><img class="ph" src="assets/bride.jpeg" alt="" loading="lazy"><img class="deco wyb" src="assets/wayang_bride.png" alt="" onerror="this.remove()"></div>
  <p><span data-t="dau"></span><br>Bpk. Mei Sugiantoro &amp; Ibu Susy Wulandari</p>
  <img class="lg" src="assets/logo-green.png" alt="Alfia &amp; Dandy">
 </section>
 
 <section>
+ <img class="deco op" src="assets/orchid_pink.png" alt="" onerror="this.remove()">
  <img class="lg" style="margin:0 auto 24px" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy">
  <p data-t="story1"></p>
- <img class="ph" src="assets/together1.jpeg" alt="" loading="lazy">
+ <div class="ph flip" data-set="1" role="button" tabindex="0"><div class="fi"><div class="front"><img src="assets/together1.jpeg" alt="" loading="lazy"><span class="nudge" data-t="tap"></span></div><div class="back"><img src="assets/logo-yellow.png" alt=""><span data-t="more"></span></div></div></div>
  <p data-t="story2"></p>
- <img class="ph" src="assets/together2.jpeg" alt="" loading="lazy">
+ <div class="ph flip" data-set="2" role="button" tabindex="0"><div class="fi"><div class="front"><img src="assets/together2.jpeg" alt="" loading="lazy"><span class="nudge" data-t="tap"></span></div><div class="back"><img src="assets/logo-yellow.png" alt=""><span data-t="more"></span></div></div></div>
 </section>
 
 <section class="cr">
  <h2 style="color:var(--grn)" data-t="tp"></h2><span class="jv" style="color:var(--grn)">ꦮꦼꦏ꧀ꦠꦸꦭꦤ꧀ꦥꦁꦒꦺꦴꦤꦤ꧀</span>
- <h2 class="sp" style="font-size:54px">Akad</h2><span class="jv">ꦄꦏꦣ꧀</span><p><b>15.30 – 17.00</b></p>
- <h2 class="sp" style="font-size:54px">Resepsi</h2><span class="jv">ꦉꦱꦺꦥ꧀ꦱꦶ</span><p><b>19.00 – 21.00</b></p>
- <h2 class="sp" style="font-size:28px">Griya Sekar Kinasih</h2><span class="jv">ꦒꦿꦶꦪꦱꦼꦏꦂꦏꦶꦤꦱꦶꦃ</span>
+ <h2 class="sp" style="font-size:54px">Pawiwahan</h2><span class="sub">Akad | <span class="jf">ꦄꦏꦣ꧀</span> | <span data-t="holy"></span></span><p><b>15.30 – 17.00</b></p>
+ <h2 class="sp" style="font-size:54px">Pahargyan</h2><span class="sub">Resepsi | <span class="jf">ꦉꦱꦺꦥ꧀ꦱꦶ</span> | <span data-t="rec"></span></span><p><b>19.00 – 21.00</b></p>
+ <img class="jg rv" src="assets/joglo.png" alt="" onerror="this.remove()">
+ <h2 class="sp" style="font-size:28px;margin-top:14px">Griya Sekar Kinasih</h2><span class="jv">ꦒꦿꦶꦪꦱꦼꦏꦂꦏꦶꦤꦱꦶꦃ</span>
  <p>Jl. H. Nonon Sonthanie, Duren Jaya, Bekasi Timur, Kota Bekasi, West Java 17112</p>
  <button onclick="openM('loc',map)" data-t="view"></button>
  <button onclick="openM('sp',secret)" data-t="sp"></button>
@@ -129,6 +148,7 @@ input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:14px;bo
 </section>
 
 <section class="cr" id="rsvp">
+ <img class="deco fy2" src="assets/flower_yellow.png" alt="" onerror="this.remove()">
  <h2 data-t="rsvp"></h2>
  <form id="rf">
   <input id="nm" name="name" data-p="yn" maxlength="80" required>
@@ -141,7 +161,7 @@ input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:14px;bo
  <img class="lg" src="assets/logo-green.png" alt="Alfia &amp; Dandy">
 </section>
 
-<section class="mr"><img class="lg huge" style="margin-top:0" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy"></section>
+<section class="mr"><p class="tiny" data-t="made"></p><img class="lg huge" style="margin-top:0" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy"></section>
 </main>
 
 <div class="ov" id="m"><div class="box"><button class="x" onclick="closeM()" aria-label="Close">×</button><h3 id="mt"></h3><div id="mb"></div></div></div>
@@ -159,7 +179,7 @@ invite:'We would like to invite you to our wedding',journey:'where our journey b
 venture:'who ventured to Jakarta in pursuit of his dreams, crossed paths with…',woman:'a woman of Yogyakarta heritage, her name is…',dau:'Daughter of',
 story1:'In the midst of life in Greater Jakarta, a chance match on Bumble brought their worlds together.',story2:'Neither could have known that a simple swipe would lead to a lifetime of love, and to this very day.',
 tp:'Insight to Time & Place',view:'View Location',loc:'Location & Getting There',sp:'Special Invitation',
-att:'Attire Guide.',att1:'The Bride & Groom want to keep the event simple & njawani.',att2:'Wear your Batik & Kebaya.',ty:'Thank you.',
+att:'Attire Guide',att1:'The Bride & Groom want to keep the event simple & njawani.',att2:'Wear your Batik & Kebaya.',ty:'Thank you.',holy:'Holy Matrimony',rec:'Reception',gal:'Our Moments',tap:'👆 Tap to flip',more:'4 more photos',made:'created out of thin air with 0 rupiah spent by yours truly 😝 with the help of Canva, Claude &amp; Cloudflare',
 gift:'Wedding Gift',giftp:'Your presence is our greatest gift. If you would like to celebrate with us through a gift, we welcome a cashless contribution with gratitude.',
 reg:'Gift Registry',sendm:'Send Money',pay:'Send Money',rsvp:'RSVP & Wishes',yn:'Your name',wish:'Your wishes',yes:'I will attend',no:'Sorry, I can’t attend',send:'Send',
 buy:'Buy ↗',got:'I bought this',copy:'Copy',code:'Enter code',ok:'Unlock',bad:'Wrong code or error. Try again.',thx:'Thank you! Your reply is saved.',bad2:'Could not send. Please try again.',ask:'Your name for the gift note:',
@@ -174,7 +194,7 @@ invite:'Dengan hormat kami mengundang Anda ke pernikahan kami',journey:'tempat p
 venture:'yang merantau ke Jakarta mengejar mimpinya, bertemu dengan…',woman:'seorang perempuan berdarah Yogyakarta, bernama…',dau:'Putri dari',
 story1:'Di tengah hiruk-pikuk Jabodetabek, sebuah match di Bumble mempertemukan dunia mereka.',story2:'Tak ada yang tahu, satu geseran sederhana akan berujung pada cinta seumur hidup, hingga hari ini.',
 tp:'Waktu & Tempat',view:'Lihat Lokasi',loc:'Lokasi & Cara ke Sana',sp:'Undangan Khusus',
-att:'Panduan Busana.',att1:'Mempelai ingin acara ini sederhana & njawani.',att2:'Kenakan Batik & Kebaya Anda.',ty:'Terima kasih.',
+att:'Panduan Busana',att1:'Mempelai ingin acara ini sederhana & njawani.',att2:'Kenakan Batik & Kebaya Anda.',ty:'Terima kasih.',holy:'Pernikahan Suci',rec:'Perayaan',gal:'Momen Kami',tap:'👆 Ketuk untuk membalik',more:'4 foto lainnya',made:'dibuat dari nol dengan 0 rupiah oleh yang bersangkutan 😝 berkat bantuan Canva, Claude &amp; Cloudflare',
 gift:'Hadiah Pernikahan',giftp:'Kehadiran Anda adalah hadiah terbesar kami. Jika berkenan memberi hadiah, kami dengan senang hati menerima kado nontunai.',
 reg:'Daftar Kado',sendm:'Kirim Uang',pay:'Kirim Uang',rsvp:'RSVP & Ucapan',yn:'Nama Anda',wish:'Ucapan & doa',yes:'Saya akan hadir',no:'Maaf, tidak bisa hadir',send:'Kirim',
 buy:'Beli ↗',got:'Sudah saya beli',copy:'Salin',code:'Masukkan kode',ok:'Buka',bad:'Kode salah atau terjadi kesalahan.',thx:'Terima kasih! Jawaban Anda tersimpan.',bad2:'Gagal mengirim. Coba lagi.',ask:'Nama Anda untuk catatan kado:',
@@ -195,15 +215,15 @@ function mus(){const a=$('#bgm');a.paused?a.play():a.pause()}
 setInterval(()=>{const s=Math.max(0,(TARGET-Date.now())/1e3|0),v=[s/86400|0,s%86400/3600|0,s%3600/60|0,s%60];$$('#cd b').forEach((e,i)=>e.textContent=String(v[i]).padStart(2,'0'))},1000);
 /* modal: same page; X / backdrop / Esc / phone Back all close it */
 function openM(t,f){$('#mt').innerHTML=T[L][t];$('#m').classList.add('on');history.pushState({m:1},'');f()}
-function closeM(){if(!$('#m').classList.contains('on'))return;$('#m').classList.remove('on');$('#mb').innerHTML='';if(history.state&&history.state.m)history.back()}
-addEventListener('popstate',()=>{$('#m').classList.remove('on')});
+function closeM(){if(!$('#m').classList.contains('on'))return;$('#m').classList.remove('on');unflip();$('#mb').innerHTML='';if(history.state&&history.state.m)history.back()}
+addEventListener('popstate',()=>{$('#m').classList.remove('on');unflip()});
 $('#m').onclick=e=>e.target.id=='m'&&closeM();addEventListener('keydown',e=>e.key=='Escape'&&closeM());
 async function gifts(){const c=await api('gifts')||[];
  $('#mb').innerHTML=GIFTS.map(g=>`<div class="row ${c.includes(g.id)?'done':''}"><span>${g.name}</span><span><a href="${g.url}" target="_blank" rel="noopener">${T[L].buy}</a> <button data-g="${g.id}" ${c.includes(g.id)?'disabled':''}>${T[L].got}</button></span></div>`).join('');
  $$('[data-g]').forEach(b=>b.onclick=async()=>{await api('gifts',{method:'POST',body:JSON.stringify({id:b.dataset.g,by:prompt(T[L].ask,to)||to})});gifts()})}
 function pay(){$('#mb').innerHTML=`<p><b>BCA – Bank Central Asia</b><br>SWIFT/BIC: CENAIDJA</p>`+
  ACC.map(([n,a])=>`<div class="row"><span>${n}<br><b>${a.replace(/(\d{4})(\d{3})(\d{3})/,'$1 $2 $3')}</b></span><button data-c="${a}">${T[L].copy}</button></div>`).join('')+
- `<p style="margin-top:18px"><b>QRIS</b></p><img src="assets/qris.jpeg" alt="QRIS" style="width:100%" loading="lazy">`;
+ `<p style="margin-top:18px"><b>QRIS</b></p><img src="assets/qris.jpeg" alt="QRIS" style="width:100%;border-radius:24px" loading="lazy">`;
  $$('[data-c]').forEach(x=>x.onclick=()=>{navigator.clipboard.writeText(x.dataset.c);x.textContent='✓'})}
 function map(){$('#mb').innerHTML=`<iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Griya+Sekar+Kinasih+Bekasi&output=embed"></iframe><a class="btn" href="https://maps.app.goo.gl/nQ6C2aG52vvV6xPv5" target="_blank" rel="noopener">Google Maps ↗</a>`+
  [1,2,3,4,5].map(i=>`<div class="row" style="justify-content:flex-start"><span class="ic">${IC[i-1]}</span><span>${T[L]['tr'+i]}</span></div>`).join('')}
@@ -213,6 +233,9 @@ $('#rf').onsubmit=async e=>{e.preventDefault();const r=await api('rsvp',{method:
  $('#rs').textContent=T[L][r&&r.ok?'thx':'bad2'];if(r&&r.ok){e.target.reset();wishes()}};
 async function wishes(){const w=await api('wishes')||[];$('#wl').replaceChildren(...w.map(x=>{const p=document.createElement('p');p.textContent=x.name+': '+x.message;return p}))}
 /* ===== MOTION ===== */
+function unflip(){$$('.flip.on').forEach(f=>f.classList.remove('on'))}
+const GAL={1:[1,2,3,4],2:[5,6,7,8]};
+$$('.flip').forEach(f=>{const tap=()=>{if(f.classList.contains('on'))return;f.classList.add('on');setTimeout(()=>openM('gal',()=>{$('#mb').innerHTML='<div class="col">'+GAL[f.dataset.set].map(n=>`<img src="assets/gallery${n}.jpeg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`).join('')+'</div>'}),750)};f.onclick=tap;f.onkeydown=e=>(e.key=='Enter'||e.key==' ')&&tap()});
 const cl=v=>Math.min(1,Math.max(0,v));
 $$('section:not(#hero)').forEach(sec=>[...sec.querySelectorAll('p,h2,.pill,button,.btn,.jv,.fl,.lg,.ar')].forEach((e,i)=>{e.classList.add('rv');e.style.transitionDelay=(i%3)*90+'ms'}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
