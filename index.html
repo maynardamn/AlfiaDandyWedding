@@ -74,6 +74,12 @@ input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:14px;bo
 .col img:nth-child(1){grid-row:span 2}.col img:nth-child(4){grid-column:span 2}
 .bee{position:absolute;left:0;top:0;width:46px;z-index:4;pointer-events:none;will-change:transform;animation:buzz .22s ease-in-out infinite alternate}@keyframes buzz{to{translate:0 -4px}}
 .tiny{font-size:11px;opacity:.7;margin:0 0 6px}
+.gsec p{font-size:17px;line-height:1.5}
+.gr{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;font-size:16px;line-height:1.3;border-bottom:0;padding:8px 0}
+.gr .ic{font-size:22px}.gr small{font-size:13px;opacity:.8}
+.ga{display:flex;flex-direction:column;align-items:stretch;gap:4px;text-align:center}
+.ga a{font-size:14px;color:var(--mar)}.ga button{margin:0;padding:6px 12px;font-size:14px}
+select:disabled{opacity:.45;background:#ddd;cursor:not-allowed}
 </style></head><body>
 
 <div id="gate">
@@ -145,7 +151,7 @@ input,select,textarea{width:100%;padding:12px;margin:5px 0;border-radius:14px;bo
  <img class="lg" src="assets/logo-yellow.png" alt="Alfia &amp; Dandy">
 </section>
 
-<section class="mr" style="padding-top:0">
+<section class="mr gsec" style="padding-top:0">
  <h2 data-t="gift"></h2><span class="jv">ꦲꦣꦶꦪꦃꦩꦤ꧀ꦠꦺꦤ꧀</span><p data-t="giftp"></p>
  <p><b>Perumahan Vertihome Serpong Blok B No 4, Jl. Salem 2, RT 03 / RW 01, Kel Serpong, Kec Serpong, Kota Tangerang Selatan, Banten 15311</b></p>
  <button onclick="openM('gift',gifts)" data-t="reg"></button>
@@ -197,7 +203,7 @@ invite:'We would like to invite you to our wedding',journey:'where our journey b
 venture:'who ventured to Jakarta in pursuit of his dreams, crossed paths with…',woman:'a woman of Yogyakarta heritage, her name is…',dau:'Daughter of',
 story1:'In the midst of life in Greater Jakarta, a chance match on Bumble brought their worlds together.',story2:'Neither could have known that a simple swipe would lead to a lifetime of love, and to this very day.',
 tp:'Insight to Time & Place',dt:'Sunday, January 31st, 2027',view:'View Location',loc:'Location & Getting There',sp:'Special Invitation?',cal:'Add to Calendar',
-att:'Attire Guide',att1:'The Bride & Groom want to keep the event simple & njawani.',att2:'Wear Batik & Kebaya, or proudly wear your own traditional attire from your culture. All traditions are welcome.',ty:'Thank you.',holy:'Holy Matrimony',rec:'Reception',gal:'Our Moments',tap:'👆 Tap to flip',more:'4 more photos',made:'created out of thin air with 0 rupiah spent by yours truly 😝 with the help of Canva, Claude &amp; Cloudflare',
+att:'Attire Guide',att1:'The Bride & Groom want to keep the event simple & njawani.',att2:'Not mandatory, but if you have Batik & Kebaya, or traditional attire from your own culture, and would like to wear it, it will be very much welcomed.',ty:'Thank you.',holy:'Holy Matrimony',rec:'Reception',gal:'Our Moments',tap:'👆 Tap to flip',more:'4 more photos',made:'created out of thin air with 0 rupiah spent by yours truly 😝 with the help of Canva, Claude &amp; Cloudflare',
 gift:'Wedding Gift',giftp:'Your presence is the greatest gift we could ask for. If you’d like to mark the day with something more, we’ve gathered a few ideas for our new home, and a cashless option too. Every gesture is received with heartfelt gratitude.',
 reg:'Gift Ideas',gnote:'Entirely optional, your presence means the most to us. If you’d like to give something for our new home, here are a few things we’d love. Feel free to go in together: one of you can check out on behalf of the group. Please tap “I bought this” afterwards so others can see.',left:'{n} of {q} still available',bought:'Already bought',sendm:'Send Money',pay:'Send Money',rsvp:'RSVP & Wishes',yn:'Your name',wish:'Your wishes',yes:'I will attend',no:'Sorry, I can’t attend',send:'Send',
 buy:'Buy ↗',got:'I bought this',copy:'Copy',code:'Enter secret code',ok:'Unlock',bad:'Wrong code or error. Try again.',thx:'Thank you! Your reply is saved.',bad2:'Could not send. Please try again.',ask:'Your name for the gift note:',
@@ -212,7 +218,7 @@ invite:'Dengan hormat kami mengundang Anda ke pernikahan kami',journey:'tempat p
 venture:'yang merantau ke Jakarta mengejar mimpinya, bertemu dengan…',woman:'seorang perempuan berdarah Yogyakarta, bernama…',dau:'Putri dari',
 story1:'Di tengah hiruk-pikuk Jabodetabek, sebuah match di Bumble mempertemukan dunia mereka.',story2:'Tak ada yang tahu, satu swipe sederhana akan berujung pada cinta seumur hidup, hingga hari ini.',
 tp:'Waktu & Tempat',dt:'Minggu, 31 Januari 2027',view:'Lihat Lokasi',loc:'Lokasi & Cara ke Sana',sp:'Undangan Khusus?',cal:'Tambah ke Kalender',
-att:'Panduan Busana',att1:'Mempelai ingin acara ini sederhana & njawani.',att2:'Kenakan Batik & Kebaya, atau busana tradisional dari budaya Anda sendiri. Semua tradisi kami sambut dengan hangat.',ty:'Terima kasih.',holy:'Holy Matrimony',rec:'Reception',gal:'Momen Kami',tap:'👆 Ketuk untuk membalik',more:'4 foto lainnya',made:'dibuat dari nol dengan 0 rupiah oleh yours truly 😝 berkat bantuan Canva, Claude &amp; Cloudflare',
+att:'Panduan Busana',att1:'Mempelai ingin acara ini sederhana & njawani.',att2:'Tidak wajib, tetapi jika Anda memiliki Batik & Kebaya atau busana tradisional dari budaya Anda sendiri dan berkenan mengenakannya, kami akan sangat senang menyambutnya.',ty:'Terima kasih.',holy:'Holy Matrimony',rec:'Reception',gal:'Momen Kami',tap:'👆 Ketuk untuk membalik',more:'4 foto lainnya',made:'dibuat dari nol dengan 0 rupiah oleh yours truly 😝 berkat bantuan Canva, Claude &amp; Cloudflare',
 gift:'Hadiah Pernikahan',giftp:'Kehadiran Anda adalah hadiah terbaik bagi kami. Jika berkenan memberi tanda kasih, kami telah menyiapkan beberapa ide untuk rumah baru kami, juga opsi nontunai. Setiap perhatian akan kami terima dengan penuh rasa syukur.',
 reg:'Ide Kado',gnote:'Sepenuhnya opsional, kehadiran Anda sudah paling berarti bagi kami. Kalau berkenan memberi sesuatu untuk rumah baru kami, berikut beberapa hal yang akan kami syukuri. Boleh juga patungan: cukup satu orang yang checkout mewakili. Setelah itu, mohon tekan “Sudah saya beli” agar yang lain tahu.',left:'{n} dari {q} masih tersedia',bought:'Sudah dibeli',sendm:'Kirim Uang',pay:'Kirim Uang',rsvp:'RSVP & Ucapan',yn:'Nama Anda',wish:'Ucapan & doa',yes:'Saya akan hadir',no:'Maaf, tidak bisa hadir',send:'Kirim',
 buy:'Beli ↗',got:'Sudah saya beli',copy:'Salin',code:'Masukkan kode rahasia',ok:'Buka',bad:'Kode salah atau terjadi kesalahan.',thx:'Terima kasih! Jawaban Anda tersimpan.',bad2:'Gagal mengirim. Coba lagi.',ask:'Nama Anda untuk catatan kado:',
@@ -238,9 +244,9 @@ function closeM(){if(!$('#m').classList.contains('on'))return;$('#m').classList.
 addEventListener('popstate',()=>{$('#m').classList.remove('on');unflip()});
 $('#m').onclick=e=>e.target.id=='m'&&closeM();addEventListener('keydown',e=>e.key=='Escape'&&closeM());
 async function gifts(){const c=await api('gifts')||[];
- $('#mb').innerHTML=`<p class="tr" style="margin-top:0">${T[L].gnote}</p>`+GIFTS.map(g=>{
+ $('#mb').innerHTML=`<p class="tr" style="margin-top:0;font-size:14px">${T[L].gnote}</p>`+GIFTS.map(g=>{
   const q=g.qty||1,pre=g.done===true?q:(g.done||0),srv=c.filter(x=>x==g.id||x.startsWith(g.id+'#')).length,left=Math.max(0,q-pre-srv);
-  return `<div class="row ${left?'':'done'}"><span><span class="ic">${g.ic}</span> ${g.n[L]}${q>1?`<br><small>${T[L].left.replace('{n}',left).replace('{q}',q)}</small>`:''}</span><span><a href="${g.url}" target="_blank" rel="noopener">${T[L].buy}</a> <button data-g="${g.id}" data-q="${q}" ${left?'':'disabled'}>${left?T[L].got:T[L].bought}</button></span></div>`}).join('');
+  return `<div class="row gr ${left?'':'done'}"><span class="ic">${g.ic}</span><span>${g.n[L]}${q>1?`<br><small>${T[L].left.replace('{n}',left).replace('{q}',q)}</small>`:''}</span><span class="ga"><a href="${g.url}" target="_blank" rel="noopener">${T[L].buy}</a><button data-g="${g.id}" data-q="${q}" ${left?'':'disabled'}>${left?T[L].got:T[L].bought}</button></span></div>`}).join('');
  $$('[data-g]').forEach(b=>b.onclick=async()=>{const q=+b.dataset.q,by=prompt(T[L].ask,to);if(by===null)return;
   for(let i=1;i<=q;i++){const r=await api('gifts',{method:'POST',body:JSON.stringify({id:q>1?b.dataset.g+'#'+i:b.dataset.g,by:by||to})});if(r&&r.ok)break}
   gifts()})}
@@ -253,7 +259,9 @@ function map(){$('#mb').innerHTML=`<iframe loading="lazy" title="Map" src="https
 function secret(){$('#mb').innerHTML=`<input id="sc" placeholder="${T[L].code}" autocomplete="off"><button id="sb">${T[L].ok}</button><p id="sr"></p>`;
  $('#sb').onclick=async()=>{const r=await api('secret',{method:'POST',body:JSON.stringify({code:$('#sc').value})});const o=r&&r.ok;$('#sr').innerHTML=o?'':`<img src="assets/error.png" alt="${T[L].bad}" width="361" height="364" style="display:block;max-width:100%;height:auto;margin:0 auto">`;if(o)$('#sr').textContent=r.info}}
 $('#rf').onsubmit=async e=>{e.preventDefault();const r=await api('rsvp',{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(e.target)))});
- $('#rs').textContent=T[L][r&&r.ok?'thx':'bad2'];if(r&&r.ok){e.target.reset();wishes()}};
+ $('#rs').textContent=T[L][r&&r.ok?'thx':'bad2'];if(r&&r.ok){e.target.reset();pax();wishes()}};
+function pax(){const a=$('[name=attending]'),g=$('[name=guests]'),no=a.value=='no';[...g.options].forEach(o=>{if(o.value=='0')o.remove()});if(no){g.add(new Option('0 pax','0'));g.value='0'}else g.value='1';g.disabled=no}
+$('[name=attending]').onchange=pax;
 async function wishes(){const w=await api('wishes')||[];$('#wl').replaceChildren(...w.map(x=>{const p=document.createElement('p'),b=document.createElement('b');b.textContent=x.name;p.append(b,' '+x.message);return p}))}
 /* ===== MOTION ===== */
 function addCal(){const E=[['Akad Nikah','20270131T083000Z','20270131T100000Z'],['Resepsi','20270131T120000Z','20270131T140000Z']],loc='Griya Sekar Kinasih, Jl. H. Nonon Sonthanie, Duren Jaya, Bekasi Timur, Kota Bekasi, West Java 17112'.replace(/,/g,'\\,');
