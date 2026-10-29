@@ -10,7 +10,7 @@ export async function onRequest({request:r,env}){
   if(p==='rsvp'&&post){
     const name=cut(b.name,80); if(!name) return J({ok:false},400);
     await env.DB.prepare('INSERT INTO rsvp(name,attending,guests,message) VALUES(?,?,?,?)')
-      .bind(name,b.attending==='no'?'no':'yes',Math.min(Math.max(+b.guests||1,1),10),cut(b.message,300)).run();
+      .bind(name,b.attending==='no'?'no':'yes',b.attending==='no'?0:Math.min(Math.max(+b.guests||1,1),10),cut(b.message,300)).run();
     return J({ok:true});
   }
   if(p==='wishes'){
