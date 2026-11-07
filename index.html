@@ -188,15 +188,15 @@ const TARGET=new Date('2027-01-31T15:30:00+07:00');
 const GIFTS=[
 {id:'bedcover1',ic:'🛏️',n:{en:'Bed Cover (Option 1)',id:'Bed Cover (Pilihan 1)'},url:'https://id.shp.ee/DwPKjDpS'},
 {id:'bedcover2',ic:'🛏️',n:{en:'Bed Cover (Option 2)',id:'Bed Cover (Pilihan 2)'},url:'https://id.shp.ee/MH62tsiQ'},
-{id:'blender',ic:'🍹',n:{en:'Blender',id:'Blender'},url:'https://id.shp.ee/ZLgrynaD'},
+{id:'microwave',ic:'♨️',n:{en:'Microwave',id:'Microwave'},url:'https://id.shp.ee/RAA5oMxT'},
+{id:'blender',ic:'🍹',n:{en:'Blender',id:'Blender'},url:'https://id.shp.ee/WX2SadLm'},
 {id:'toolkit',ic:'🧰',n:{en:'Tool Kit',id:'Set Perkakas'},url:'https://id.shp.ee/TBNjKXaa'},
 {id:'airfryer',ic:'🍟',n:{en:'Air Fryer',id:'Air Fryer'},url:'https://id.shp.ee/ci1wFvBH',done:true},
 {id:'cctv',ic:'📹',n:{en:'CCTV',id:'CCTV'},url:'https://id.shp.ee/u6bwNdsj',qty:4},
-{id:'teapot',ic:'🫖',n:{en:'Teapot',id:'Teko Teh'},url:'https://id.shp.ee/nNBHoAT4'},
 {id:'pan',ic:'🍳',n:{en:'Frying Pan',id:'Wajan'},url:'https://id.shp.ee/it71XpCn'},
 {id:'knives',ic:'🔪',n:{en:'Knife Set',id:'Set Pisau Dapur'},url:'https://id.shp.ee/3XdTGqAw'},
-{id:'microwave',ic:'♨️',n:{en:'Microwave',id:'Microwave'},url:'https://id.shp.ee/RAA5oMxT'},
-{id:'dispenser',ic:'🚰',n:{en:'Water Dispenser',id:'Dispenser Air'},url:'https://id.shp.ee/vYPx5hUZ'}];
+{id:'stove',ic:'🔥',n:{en:'Stove',id:'Kompor'},url:'https://id.shp.ee/QsB7SkYe'},
+{id:'teapot',ic:'🫖',n:{en:'Teapot',id:'Teko Teh'},url:'https://id.shp.ee/nNBHoAT4'}];
 const ACC=[['R. Dandy Yusuf Maynardi','0353167593'],['Alfiaturrokhmah','8850976911']];
 const IC=['🚆','🚌','🚌','🚈','🚗'];
 /* ===== TEXT ===== */
@@ -250,6 +250,7 @@ async function gifts(){const c=await api('gifts')||[];
  $('#mb').innerHTML=`<p class="tr" style="margin-top:0;font-size:14px">${T[L].gnote}</p>`+GIFTS.map(g=>{
   const q=g.qty||1,pre=g.done===true?q:(g.done||0),srv=c.filter(x=>x==g.id||x.startsWith(g.id+'#')).length,left=Math.max(0,q-pre-srv);
   return `<div class="row gr ${left?'':'done'}"><span class="ic">${g.ic}</span><span>${g.n[L]}${q>1?`<br><small>${T[L].left.replace('{n}',left).replace('{q}',q)}</small>`:''}</span><span class="ga"><a href="${g.url}" target="_blank" rel="noopener">${T[L].buy}</a><button data-g="${g.id}" data-q="${q}" ${left?'':'disabled'}>${left?T[L].got:T[L].bought}</button></span></div>`}).join('');
+ $$('.ga a').forEach(a=>a.onclick=e=>{e.preventDefault();const w=window.open(a.href,'_blank');if(w)w.opener=null;else location.href=a.href});
  $$('[data-g]').forEach(b=>b.onclick=async()=>{if(!confirm(T[L].conf))return;const q=+b.dataset.q,by=prompt(T[L].ask,to);if(by===null)return;
   for(let i=1;i<=q;i++){const r=await api('gifts',{method:'POST',body:JSON.stringify({id:q>1?b.dataset.g+'#'+i:b.dataset.g,by:by||to})});if(r&&r.ok)break}
   gifts()})}
